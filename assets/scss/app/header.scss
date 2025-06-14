@@ -1,0 +1,41 @@
+.header {
+  padding: 44px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__logo {
+    display: block;
+    max-width: 245px;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--bold-gray);
+    transition: var(--transition);
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+
+    svg {
+      color: var(--bold-gray);
+    }
+
+    &:hover {
+      border-color: var(--green);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.footer {
+  padding: 45px 0;
+  background-color: var(--green);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: block;
+    max-width: 245px;
+    width: 100%;
+  }
+}
