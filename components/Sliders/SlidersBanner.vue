@@ -8,14 +8,17 @@ const slides = ref([
   {
     title: "Stan Smith, Forever!",
     image: "/images/slider/slide-1.png",
+    link: "/",
   },
   {
     title: "Успей первым — количество ограничено!",
     image: "/images/slider/slide-1.png",
+    link: "/",
   },
   {
     title: "Качество, проверенное временем",
     image: "/images/slider/slide-1.png",
+    link: "/",
   },
 ]);
 </script>
@@ -41,7 +44,9 @@ const slides = ref([
               </div>
               <div class="slider__box">
                 <h2 class="title slider__title">{{ item.title }}</h2>
-                <NuxtLink to="/" class="button slider__link">Купить</NuxtLink>
+                <NuxtLink :to="item.link" class="button slider__link"
+                  >Купить</NuxtLink
+                >
               </div>
             </div>
           </swiper-slide>
