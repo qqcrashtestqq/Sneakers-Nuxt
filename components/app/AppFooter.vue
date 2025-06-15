@@ -4,7 +4,7 @@
   <footer class="footer">
     <div class="container footer__container">
       <NuxtLink to="/" class="footer__logo">
-        <img src="../../public/images/logo.svg" alt="" />
+        <img src="../../public/images/footer-logo.svg" alt="" />
       </NuxtLink>
       <ul class="footer__list">
         <li>213</li>

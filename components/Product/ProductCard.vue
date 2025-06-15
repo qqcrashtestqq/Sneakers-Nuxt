@@ -13,7 +13,7 @@ console.log();
 
 <template>
   <div class="card">
-    {{ product.product.favorite }}
+    <AppLike :statusLike="product.product.favorite" />
     <div class="card__image">
       <img :src="`${baseUrl}/${product.product.image}`" alt="photo product" />
     </div>
@@ -25,7 +25,7 @@ console.log();
         <span class="card__price-text">Цена:</span>
         <p class="card__price-value">{{ product.product.price }}</p>
       </div>
-      <!-- тут будет кнопка -->
+      <AppPay />
     </div>
   </div>
 </template>

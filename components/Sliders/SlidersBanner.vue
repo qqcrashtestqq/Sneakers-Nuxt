@@ -1,22 +1,49 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import { NuxtLink } from "#components";
+
+const slides = ref([
+  {
+    title: "Stan Smith, Forever!",
+    image: "/images/slider/slide-1.png",
+  },
+  {
+    title: "Успей первым — количество ограничено!",
+    image: "/images/slider/slide-1.png",
+  },
+  {
+    title: "Качество, проверенное временем",
+    image: "/images/slider/slide-1.png",
+  },
+]);
 </script>
 
 <template>
   <section class="slider">
-    <div class="container">
+    <div class="container slider__container">
       <div class="slider__slider">
-        <swiper :slides-per-view="1" :space-between="24" navigation>
-          <swiper-slide>
-            <div class="slider__slide"></div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="slider__slide"></div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="slider__slide"></div>
+        <swiper
+          :slides-per-view="1"
+          :space-between="24"
+          :loop="true"
+          :modules="[Navigation, Pagination]"
+          :pagination="{ clickable: true }"
+          :speed="600"
+          :autoplay="{ delay: 600, disableOnInteraction: false }"
+          navigation
+        >
+          <swiper-slide v-for="(item, index) in slides" :key="index">
+            <div class="slider__slide">
+              <div class="slider__image">
+                <img :src="item.image" alt="slider photo" />
+              </div>
+              <div class="slider__box">
+                <h2 class="title slider__title">{{ item.title }}</h2>
+                <NuxtLink to="/" class="button slider__link">Купить</NuxtLink>
+              </div>
+            </div>
           </swiper-slide>
         </swiper>
       </div>

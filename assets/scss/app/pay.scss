@@ -1,0 +1,23 @@
+.pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: var(--border);
+  border-radius: 8px;
+  transition: var(--transition);
+
+  &__default {
+    color: var(--gray);
+  }
+
+  &__active {
+    color: var(--white);
+  }
+
+  &.active {
+    border: none;
+    background: var(--gradient);
+  }
+}

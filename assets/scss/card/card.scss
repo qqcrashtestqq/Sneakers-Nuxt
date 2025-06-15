@@ -8,9 +8,9 @@
   border-radius: var(--radius);
   height: 100%;
   transition: var(--transition);
-  cursor: pointer;
 
   &__image {
+    margin: 0 auto;
     max-width: 133px;
     height: 133px;
     width: 100%;

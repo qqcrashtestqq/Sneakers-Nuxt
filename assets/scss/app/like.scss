@@ -1,0 +1,22 @@
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray);
+  border-radius: 7px;
+  transition: var(--transition);
+
+  svg {
+    color: var(--gray);
+  }
+
+  &.active {
+    border-color: transparent;
+    background-color: var(--line-red);
+    svg {
+      color: var(--red);
+    }
+  }
+}
