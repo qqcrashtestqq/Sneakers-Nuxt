@@ -1,4 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useCatalog } from "@/stores/catalog";
+
+const catalog = useCatalog();
+
+onMounted(() => {
+  catalog.getCatalog();
+});
+</script>
 
 <template>
   <section class="category">
@@ -7,7 +15,9 @@
         <h2 class="title title--h2 category__title">Все кроссовки</h2>
       </div>
       <ul class="category__list">
-        <CategoryItem />
+        <li v-for="item in catalog.catalog" :key="item.id">
+          <ProductCard :product="item" />
+        </li>
       </ul>
     </div>
   </section>
