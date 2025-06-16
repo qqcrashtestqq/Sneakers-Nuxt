@@ -1,0 +1,23 @@
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  transition: var(--transition);
+
+  svg {
+    color: var(--gray);
+  }
+
+  &:hover {
+    background-color: var(--green);
+    border-color: var(--green);
+
+    svg {
+      color: var(--white);
+    }
+  }
+}

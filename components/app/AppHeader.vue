@@ -1,21 +1,9 @@
 <script lang="ts" setup>
-const MENU_LOGO = [
-  {
-    icon: "IconBasket",
-    name: "0 $",
-    link: "",
-  },
-  {
-    icon: "IconLike",
-    name: "Закладки",
-    link: "",
-  },
-  {
-    icon: "IconUser",
-    name: "Профиль",
-    link: "",
-  },
-];
+import { useBasket } from "@/stores/basket";
+
+const basketStore = useBasket();
+const { toggleBasket } = basketStore;
+const balance = ref(0);
 </script>
 
 <template>
@@ -26,9 +14,17 @@ const MENU_LOGO = [
       </NuxtLink>
 
       <ul class="header__list">
-        <li v-for="(item, key) in MENU_LOGO" :key="key" class="header__item">
-          <Icon :name="item.icon" zise="18" />
-          {{ item.name }}
+        <li class="header__item" @click="toggleBasket">
+          <Icon name="IconBasket" zise="18" />
+          {{ balance }} $
+        </li>
+        <li class="header__item">
+          <Icon name="IconLike" zise="18" />
+          Закладки
+        </li>
+        <li class="header__item">
+          <Icon name="IconUser" zise="18" />
+          Вход
         </li>
       </ul>
     </div>

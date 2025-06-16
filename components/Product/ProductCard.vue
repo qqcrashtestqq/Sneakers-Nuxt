@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import type { IProduct } from "@/types/product";
+import { useBasket } from "@/stores/basket";
 
+const basketStore = useBasket();
+const { getOneProduct } = basketStore;
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl;
 
@@ -23,9 +26,12 @@ console.log();
     <div class="card__box">
       <div class="card__price">
         <span class="card__price-text">Цена:</span>
-        <p class="card__price-value">{{ product.product.price }}</p>
+        <p class="card__price-value">{{ product.product.price }} $</p>
       </div>
-      <AppPay />
+      <AppPay
+        :id="product.product.id"
+        @click="getOneProduct(product.product)"
+      />
     </div>
   </div>
 </template>

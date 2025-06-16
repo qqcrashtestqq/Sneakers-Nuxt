@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+const props = defineProps<{
+  id: number;
+}>();
+
+console.log("props", props);
+
 const statusPay = ref(false);
 
 function status() {
