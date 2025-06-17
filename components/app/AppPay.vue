@@ -3,8 +3,6 @@ const props = defineProps<{
   id: number;
 }>();
 
-console.log("props", props);
-
 const statusPay = ref(false);
 
 function status() {

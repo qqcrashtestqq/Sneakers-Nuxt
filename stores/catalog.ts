@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import type { ICatalog } from "../types/catalog";
+import { useCustomFetch } from "@/composables/useCustomFetch";
 
 export const useCatalog = defineStore("catalog", {
   state: (): ICatalog => ({
@@ -8,8 +9,8 @@ export const useCatalog = defineStore("catalog", {
 
   actions: {
     async getCatalog() {
-      const { data, error } = await useCastomFetch("/products");
-      this.catalog = data.value.data;
+      const { data, error } = await useCustomFetch("/products");
+      this.catalog = data;
       return this.catalog;
     },
   },

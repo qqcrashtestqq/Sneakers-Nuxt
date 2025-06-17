@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { useCatalog } from "@/stores/catalog";
 
-const catalog = useCatalog();
+const storeCatalog = useCatalog();
 
 onMounted(() => {
-  catalog.getCatalog();
+  storeCatalog.getCatalog();
 });
 </script>
 
@@ -15,7 +15,7 @@ onMounted(() => {
         <h2 class="title title--h2 category__title">Все кроссовки</h2>
       </div>
       <ul class="category__list">
-        <li v-for="item in catalog.catalog" :key="item.id">
+        <li v-for="item in storeCatalog.catalog" :key="item.id">
           <ProductCard :product="item" />
         </li>
       </ul>

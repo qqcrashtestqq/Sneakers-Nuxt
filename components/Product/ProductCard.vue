@@ -3,7 +3,7 @@ import type { IProduct } from "@/types/product";
 import { useBasket } from "@/stores/basket";
 
 const basketStore = useBasket();
-const { getOneProduct } = basketStore;
+const { addProductsBasket } = basketStore;
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl;
 
@@ -28,10 +28,7 @@ console.log();
         <span class="card__price-text">Цена:</span>
         <p class="card__price-value">{{ product.product.price }} $</p>
       </div>
-      <AppPay
-        :id="product.product.id"
-        @click="getOneProduct(product.product)"
-      />
+      <AppPay :id="product.product.id" @click="" />
     </div>
   </div>
 </template>

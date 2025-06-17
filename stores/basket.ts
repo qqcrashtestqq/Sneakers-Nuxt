@@ -5,6 +5,7 @@ export const useBasket = defineStore("basket", {
   state: (): IBasket => ({
     basketProducts: [],
     status: false,
+    totalSum: 0,
   }),
 
   actions: {
@@ -14,12 +15,8 @@ export const useBasket = defineStore("basket", {
       document.body.style.overflow = this.status ? "hidden" : "";
     },
 
-    // product(s) to basket
-    async getOneProduct(product: object) {
-      this.basketProducts.push(product);
-      console.log("basketProducts", this.basketProducts);
-
-      // localStorage.getItem("basket", JSON.stringify(this.basketProducts));
-    },
+    // addProductsBasket(product: object) {
+    //   this.basketProducts.push(product);
+    // },
   },
 });

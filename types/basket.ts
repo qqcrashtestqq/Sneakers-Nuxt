@@ -1,6 +1,7 @@
-import type { IBasketProduct } from "./basketProduct";
+import type { IProduct } from "./product";
 
 export interface IBasket {
-  basketProducts: IBasketProduct;
+  basketProducts: IProduct[];
   status: boolean;
+  totalSum: number;
 }
