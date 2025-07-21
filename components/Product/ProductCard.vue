@@ -7,30 +7,36 @@ const { addProductsBasket } = basketStore;
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseUrl;
 
-const product = defineProps<{
+const props = defineProps<{
   product: IProduct;
 }>();
-
-console.log();
 </script>
 
 <template>
-  <div class="card">
-    <AppLike :statusLike="product.product.favorite" />
+  <article class="card">
+    <AppLike :statusLike="props.product.favorite" />
     <div class="card__image">
-      <img :src="`${baseUrl}/${product.product.image}`" alt="photo product" />
+      <img :src="`${baseUrl}/${props.product.image}`" alt="photo product" />
     </div>
-    <a :href="product.product.id" class="title title--h3 card__title">{{
-      product.product.name
-    }}</a>
+    <header class="card__header">
+      <NuxtLink
+        :to="`/product/${props.product.id}`"
+        class="title title--h3 card__title"
+        >{{ props.product.name }}</NuxtLink
+      >
+    </header>
+
     <div class="card__box">
       <div class="card__price">
         <span class="card__price-text">Цена:</span>
-        <p class="card__price-value">{{ product.product.price }} $</p>
+        <p class="card__price-value">{{ props.product.price }} $</p>
       </div>
-      <AppPay :id="product.product.id" @click="" />
+      <!-- <AppPay
+        :id="props.product.id"
+        @click="addProductsBasket(props.product)"
+      /> -->
     </div>
-  </div>
+  </article>
 </template>
 
 <style lang="scss" scoped>

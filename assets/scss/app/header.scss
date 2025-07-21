@@ -21,10 +21,6 @@
   }
 
   &__item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
     color: var(--bold-gray);
     transition: var(--transition);
     padding-bottom: 10px;
@@ -37,5 +33,11 @@
     &:hover {
       border-color: var(--green);
     }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 }

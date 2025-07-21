@@ -1,0 +1,35 @@
+.auth {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--white);
+
+  margin: 200px auto;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__button {
+    max-width: 200px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 8px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

@@ -6,14 +6,21 @@ const { status } = toRefs(basketStore);
 </script>
 
 <template>
-  <main>
+  <div class="">
+    <!-- header -->
     <AppHeader />
-    <slot />
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- footer  -->
     <AppFooter />
+    <!-- basket model  -->
     <Transition name="fade">
       <Basket v-if="status" />
     </Transition>
-  </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>

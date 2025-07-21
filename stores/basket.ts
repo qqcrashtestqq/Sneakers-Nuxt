@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
 import type { IBasket } from "@/types/basket";
+import type { IProduct } from "@/types/product";
+import type { IBasketProduct } from "~/types/basketProduct";
 
 export const useBasket = defineStore("basket", {
   state: (): IBasket => ({
@@ -15,8 +17,14 @@ export const useBasket = defineStore("basket", {
       document.body.style.overflow = this.status ? "hidden" : "";
     },
 
-    // addProductsBasket(product: object) {
-    //   this.basketProducts.push(product);
-    // },
+    // add product in basket
+    addProductsBasket(product: IProduct) {
+      const newProduct: IBasketProduct = {
+        ...product,
+        quantity: 0,
+      };
+
+      this.basketProducts.push(newProduct);
+    },
   },
 });

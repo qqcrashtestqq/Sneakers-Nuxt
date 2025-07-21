@@ -1,2 +1,22 @@
 .input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  gap: 15px;
+  padding: 10px 15px;
+  border: 1px solid var(--bold-gray);
+
+  &__element {
+    border: none;
+    background-color: transparent;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
 }

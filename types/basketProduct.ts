@@ -1,6 +1,5 @@
-export interface IBasketProduct {
-  id: number;
-  image: string;
-  name: string;
-  price: number;
+import type { IProduct } from "./product";
+
+export interface IBasketProduct extends IProduct {
+  quantity: number;
 }

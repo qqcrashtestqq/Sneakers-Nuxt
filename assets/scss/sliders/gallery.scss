@@ -1,0 +1,27 @@
+.gallery {
+  width: 500px;
+
+  &__thumbs {
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    width: 100%;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__image {
+      max-width: none;
+    }
+  }
+}

@@ -12,7 +12,7 @@ onMounted(() => {
   <section class="category">
     <div class="container category__container">
       <div class="category__head">
-        <h2 class="title title--h2 category__title">Все кроссовки</h2>
+        <h2 class="title title--h2 category__title">All sneakers</h2>
       </div>
       <ul class="category__list">
         <li v-for="item in storeCatalog.catalog" :key="item.id">

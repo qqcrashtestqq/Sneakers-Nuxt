@@ -20,6 +20,7 @@ const product = defineProps<{
     </div>
     <AppClose />
   </div>
+  {{ product.product.quantity }}
 </template>
 
 <style lang="scss" scoped>

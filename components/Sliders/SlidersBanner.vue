@@ -12,7 +12,7 @@ const slides = ref([
   },
   {
     title: "Успей первым — количество ограничено!",
-    image: "/images/slider/slide-1.png",
+    image: "/public/images/slider/slide-1.png",
     link: "/",
   },
   {
